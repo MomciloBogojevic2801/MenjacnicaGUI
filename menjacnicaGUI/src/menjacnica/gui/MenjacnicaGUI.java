@@ -278,6 +278,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnNewButton_2() {
 		if (btnNewButton_2 == null) {
 			btnNewButton_2 = new JButton("Obrisi kurs");
+			btnNewButton_2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ObrisiKursGUI noviProzor = new ObrisiKursGUI(gp);
+					noviProzor.setVisible(true);
+				}
+			});
 			btnNewButton_2.setPreferredSize(new Dimension(105, 23));
 		}
 		return btnNewButton_2;
@@ -341,6 +347,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnNewButton_4() {
 		if (btnNewButton_4 == null) {
 			btnNewButton_4 = new JButton("Obrisi kurs");
+			btnNewButton_4.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ObrisiKursGUI noviProzor = new ObrisiKursGUI(gp);
+					noviProzor.setVisible(true);
+				}
+			});
 			btnNewButton_4.setMaximumSize(new Dimension(105, 23));
 			btnNewButton_4.setPreferredSize(new Dimension(105, 23));
 		}
