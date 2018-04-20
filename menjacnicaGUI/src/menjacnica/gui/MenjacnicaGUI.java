@@ -33,6 +33,8 @@ import javax.swing.border.TitledBorder;
 import java.awt.ComponentOrientation;
 import java.awt.Font;
 import java.awt.Rectangle;
+import java.awt.TextArea;
+
 import javax.swing.JScrollBar;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
@@ -68,7 +70,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton btnNewButton_4;
 	private JButton btnNewButton_5;
 	
-	
+	private MenjacnicaGUI gp = this;
 
 	/**
 	 * Launch the application.
@@ -253,6 +255,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnNewButton() {
 		if (btnNewButton == null) {
 			btnNewButton = new JButton("Dodaj kurs");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					DodajKursGUI noviProzor = new DodajKursGUI(gp);
+					noviProzor.setVisible(true);
+				}
+			});
 			btnNewButton.setPreferredSize(new Dimension(105, 23));
 		}
 		return btnNewButton;
@@ -319,6 +327,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnNewButton_3() {
 		if (btnNewButton_3 == null) {
 			btnNewButton_3 = new JButton("Dodaj kurs");
+			btnNewButton_3.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					DodajKursGUI noviProzor = new DodajKursGUI(gp);
+					noviProzor.setVisible(true);
+				}
+			});
 			btnNewButton_3.setMaximumSize(new Dimension(105, 23));
 			btnNewButton_3.setPreferredSize(new Dimension(105, 23));
 		}
@@ -339,5 +353,11 @@ public class MenjacnicaGUI extends JFrame {
 			btnNewButton_5.setPreferredSize(new Dimension(105, 23));
 		}
 		return btnNewButton_5;
+	}
+	
+	void upisiNaTextArea(String tekst) {
+		//proba zbog null pointera
+	//	textArea.append("\n" + " 123123123");
+		textArea.append("\n" + tekst);
 	}
 }
